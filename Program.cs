@@ -37,6 +37,8 @@ namespace PlanYourHeist
             
             int TotalCount = accomplices.Count;
             Console.WriteLine(TotalCount);
+
+            int BankDifficultyValue = 100;
             
             // foreach(Accomplice teamMember in accomplices){
             //     Console.WriteLine(teamMember.Name);
