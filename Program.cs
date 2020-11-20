@@ -17,23 +17,26 @@ namespace PlanYourHeist
             while(true)
             {
                 Console.Write("Please enter your team member's name . . . ");
-                string nameResponse = Console.ReadLine();
-                if(nameResponse == "")break;
+                string NameResponse = Console.ReadLine();
+                if(NameResponse == "")break;
 
                 Console.Write("Please enter an integer representing your team member's skill level . . . ");
-                int skillLevelResponse = int.Parse(Console.ReadLine());
+                int SkillLevelResponse = int.Parse(Console.ReadLine());
                 
                 Console.Write("Please enter a number, including decimal points if appropriate, representing your team member's courage factor . . . ");
-                double courageFactorResponse = double.Parse(Console.ReadLine());
+                double CourageFactorResponse = double.Parse(Console.ReadLine());
             
                 accomplices.Add(
                     new Accomplice() {
-                        Name = nameResponse,
-                        SkillLevel = skillLevelResponse,
-                        CourageFactor = courageFactorResponse
+                        Name = NameResponse,
+                        SkillLevel = SkillLevelResponse,
+                        CourageFactor = CourageFactorResponse
                     }
                 );
             }
+            
+            int TotalCount = accomplices.Count;
+            Console.WriteLine(TotalCount);
             
             // foreach(Accomplice teamMember in accomplices){
             //     Console.WriteLine(teamMember.Name);
