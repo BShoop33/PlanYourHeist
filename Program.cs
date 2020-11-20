@@ -38,10 +38,10 @@ namespace PlanYourHeist
             int TotalCount = accomplices.Count;
             Console.WriteLine(TotalCount);
             
-            foreach(Accomplice teamMember in accomplices){
-                Console.WriteLine(teamMember.Name);
-                Console.WriteLine(teamMember.SkillLevel);
-                Console.WriteLine(teamMember.CourageFactor);
+            // foreach(Accomplice teamMember in accomplices){
+            //     Console.WriteLine(teamMember.Name);
+            //     Console.WriteLine(teamMember.SkillLevel);
+            //     Console.WriteLine(teamMember.CourageFactor);
             }
         }
     }
