@@ -18,7 +18,7 @@ namespace PlanYourHeist
             {
                 Console.Write("Please enter your team member's name . . . ");
                 string nameResponse = Console.ReadLine();
-                // if(nameResponse == "")break;
+                if(nameResponse == "")break;
 
                 Console.Write("Please enter an integer representing your team member's skill level . . . ");
                 int skillLevelResponse = int.Parse(Console.ReadLine());
