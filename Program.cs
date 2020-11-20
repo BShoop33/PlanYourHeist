@@ -14,7 +14,7 @@ namespace PlanYourHeist
             ");
             
             List<Accomplice> accomplices = new List<Accomplice>() {};
-            //List<Skills> TotalSkills = new List<Skills>() {};
+            int BankDifficulty = 100;
 
             while(true)
             {
@@ -38,8 +38,16 @@ namespace PlanYourHeist
             }
             
             int skill = accomplices.Sum(member => member.SkillLevel);
-          
-            Console.WriteLine($"Team Skill Level:  {skill}");
+            //Console.WriteLine($"Team Skill Level:  {skill}");
+
+            if(skill >= BankDifficulty)
+            {
+                Console.WriteLine("Success! You've robbed the bank!");
+            }
+            else
+            {
+                Console.WriteLine("Failure! Enjoy federal prison!");
+            }
 
             // int TotalCount = accomplices.Count;
             // Console.WriteLine(TotalCount);
