@@ -14,14 +14,20 @@ namespace PlanYourHeist
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Plan Your Heist!");
-
+            Console.WriteLine(@"
+            Plan Your Heist!
+            -----------------
+            ");
+            
             List<Accomplice> accomplices = new List<Accomplice>() {
                 new Accomplice () {
                     name = "", 
                     skillLevel = 0, 
                     courageFactor = 0.0}
             };
+           
+            Console.Write("Please enter your team member's name . . . ");
+            string nameResponse = Console.ReadLine();
         }
     }
 }
