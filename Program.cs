@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PlanYourHeist
 {
@@ -13,6 +14,7 @@ namespace PlanYourHeist
             ");
             
             List<Accomplice> accomplices = new List<Accomplice>() {};
+            //List<Skills> TotalSkills = new List<Skills>() {};
 
             while(true)
             {
@@ -35,16 +37,17 @@ namespace PlanYourHeist
                 );
             }
             
-            int TotalCount = accomplices.Count;
-            Console.WriteLine(TotalCount);
+            int skill = accomplices.Sum(member => member.SkillLevel);
+          
+            Console.WriteLine($"Team Skill Level:  {skill}");
 
-            int BankDifficultyValue = 100;
-            
+            // int TotalCount = accomplices.Count;
+            // Console.WriteLine(TotalCount);
+
             // foreach(Accomplice teamMember in accomplices){
             //     Console.WriteLine(teamMember.Name);
             //     Console.WriteLine(teamMember.SkillLevel);
             //     Console.WriteLine(teamMember.CourageFactor);
-            }
         }
     }
 }
