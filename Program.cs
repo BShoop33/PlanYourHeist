@@ -35,6 +35,9 @@ namespace PlanYourHeist
                     courageFactor = courageFactorResponse}
             };
 
+            Console.WriteLine(nameResponse);
+            Console.WriteLine(skillLevelResponse);
+            Console.WriteLine(courageFactorResponse);
         }
     }
 }
