@@ -19,15 +19,19 @@ namespace PlanYourHeist
             -----------------
             ");
             
-            List<Accomplice> accomplices = new List<Accomplice>() {
-                new Accomplice () {
-                    name = "", 
-                    skillLevel = 0, 
-                    courageFactor = 0.0}
-            };
-           
             Console.Write("Please enter your team member's name . . . ");
             string nameResponse = Console.ReadLine();
+            
+            Console.Write("Please enter an integer representing your team member's skill level . . . ");
+            int skillLevelResponse = int.Parse(Console.ReadLine());
+            
+            List<Accomplice> accomplices = new List<Accomplice>() {
+                new Accomplice () {
+                    name = nameResponse, 
+                    skillLevel = skillLevelResponse, 
+                    courageFactor = 0.0}
+            };
+            
         }
     }
 }
