@@ -49,6 +49,9 @@ namespace PlanYourHeist
                 Console.WriteLine("Failure! Enjoy federal prison!");
             }
 
+
+            int LuckValue = new Random().Next(-10,10);
+            
             // int TotalCount = accomplices.Count;
             // Console.WriteLine(TotalCount);
 
