@@ -14,7 +14,6 @@ namespace PlanYourHeist
             ");
             
             List<Accomplice> accomplices = new List<Accomplice>() {};
-           
 
             while(true)
             {
@@ -55,10 +54,6 @@ namespace PlanYourHeist
             {
                 Console.WriteLine("Failure! Enjoy federal prison!");
             }
-
-
-            
-            
 
 
             // int TotalCount = accomplices.Count;
