@@ -35,13 +35,15 @@ namespace PlanYourHeist
                         }
                     );
                 }
-            Console.Write("How many times would you like to run this trial?");
+            Console.Write("How many times would you like to run this trial? ");
             int scenarios = int.Parse(Console.ReadLine());
-           
+            Console.WriteLine();
 
             int skill = accomplices.Sum(member => member.SkillLevel);
             //Console.WriteLine($"Team Skill Level:  {skill}");
-
+            int attempt = 0;
+            while(attempt < scenarios)
+            {
             int BankDifficulty = 100;
             int LuckValue = new Random().Next(-10,10);
             int CombinedLuckandDifficultyValue = BankDifficulty + LuckValue;
@@ -49,7 +51,7 @@ namespace PlanYourHeist
             Console.WriteLine($"Team's Combined Skill:  {skill}");
             Console.WriteLine($"Total Heist Risk:  {CombinedLuckandDifficultyValue}");
             
-            if(skill >= BankDifficulty)
+            if(skill >= CombinedLuckandDifficultyValue)
             {
                 Console.WriteLine("Success! You've robbed the bank!");
             }
@@ -57,7 +59,9 @@ namespace PlanYourHeist
             {
                 Console.WriteLine("Failure! Enjoy federal prison!");
             }
-
+            Console.WriteLine();
+            attempt = attempt + 1;
+            }
 
             // int TotalCount = accomplices.Count;
             // Console.WriteLine(TotalCount);
