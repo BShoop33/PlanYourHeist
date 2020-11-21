@@ -12,7 +12,9 @@ namespace PlanYourHeist
             Plan Your Heist!
             -----------------
             ");
-            
+            Console.Write("Please enter the difficulty of the bank:  ");
+            int DesiredBankDifficulty = int.Parse(Console.ReadLine());
+
             List<Accomplice> accomplices = new List<Accomplice>() {};
             
                 while(true)
@@ -44,7 +46,7 @@ namespace PlanYourHeist
             int attempt = 0;
             while(attempt < scenarios)
             {
-            int BankDifficulty = 100;
+            int BankDifficulty = DesiredBankDifficulty;
             int LuckValue = new Random().Next(-10,10);
             int CombinedLuckandDifficultyValue = BankDifficulty + LuckValue;
             
