@@ -41,8 +41,26 @@ namespace PlanYourHeist
                         int SkillLevelResponse = int.Parse(Console.ReadLine());
                         
                         //Prompts the user to add team members' courage factors
+                        
                         Console.Write("Please enter a number, including decimal points if appropriate, representing your team member's courage factor . . . ");
                         double CourageFactorResponse = double.Parse(Console.ReadLine());
+                        while (CourageFactorResponse < .01 || CourageFactorResponse > 2.0){
+                            Console.Write("This value may only be between 0.0 and 2.0. Please enter a number within that range . . . ");
+                            double CourageHandling = double.Parse(Console.ReadLine());
+                            if(CourageHandling >= 0.0 && CourageHandling <= 2.0){
+                                break;
+                            }
+                        }
+                        
+                        
+                        
+                        // do {
+                        //     if(CourageFactorResponse < 0.1 || CourageFactorResponse > 2.0){
+                        //         Console.Write("Please enter a value between 0.0 and 2.0");
+                        //         Console.ReadLine();
+                        //     }
+                        // } while (CourageFactorResponse >);
+
                         
                         //Compiles the team member propmt responses into an Accomplice object and adds that object as a new list item in the accomplices list
                         accomplices.Add(
