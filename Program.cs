@@ -13,14 +13,28 @@ namespace PlanYourHeist
             Plan Your Heist!
             -----------------
             ");
+                
                 //Initializing variables for # of trial runs, number of successful trials, and  number of failure trials
                 int trial = 0;
                 int success = 0;
                 int failure = 0;
+                int DesiredBankDifficulty = 0;
+                int SkillLevelResponse = 0;
 
-                //Prompts the user to set the  bank difficulty
-                Console.Write("Please enter the difficulty of the bank:  ");
-                int DesiredBankDifficulty = int.Parse(Console.ReadLine());
+                while(true)
+                {
+                    try
+                    {
+                    //Prompts the user to set the  bank difficulty
+                    Console.Write("Please enter the difficulty of the bank:  ");
+                    DesiredBankDifficulty = int.Parse(Console.ReadLine());
+                    break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("You entered an incorrect value. Please enter a whole number for the bank difficulty.\n");
+                    }
+                }
 
                 //Creates a new empty list named accomplices and consisting of Accomplice objects
                 List<Accomplice> accomplices = new List<Accomplice>() {};
@@ -31,17 +45,30 @@ namespace PlanYourHeist
                     */
                     while(true)
                     {
+                        
                         //Prompts the user to add team members' names
                         Console.Write("Please enter your team member's name . . . ");
                         string NameResponse = Console.ReadLine();
-                        if(NameResponse == "")break;
+                        if(NameResponse == "")
+                        break;
+                        
+                        while(true)
+                        {
+                            try{
+                                //Prompts the user to add team members' skill levels
+                                Console.Write("Please enter an integer representing your team member's skill level . . . ");
+                                SkillLevelResponse = int.Parse(Console.ReadLine());
+                                if(SkillLevelResponse % 1 == 0){
+                                    break;
+                                }
+                            }
+                            catch
+                            {
+                                Console.WriteLine("You entered an incorrect value. Please enter a whole number for the bank difficulty.\n");
+                            }
+                        }
 
-                        //Prompts the user to add team members' skill levels
-                        Console.Write("Please enter an integer representing your team member's skill level . . . ");
-                        int SkillLevelResponse = int.Parse(Console.ReadLine());
-                        
                         //Prompts the user to add team members' courage factors
-                        
                         Console.Write("Please enter a number, including decimal points if appropriate, representing your team member's courage factor . . . ");
                         double CourageFactorResponse = double.Parse(Console.ReadLine());
                         while (CourageFactorResponse < .01 || CourageFactorResponse > 2.0){
@@ -51,16 +78,6 @@ namespace PlanYourHeist
                                 break;
                             }
                         }
-                        
-                        
-                        
-                        // do {
-                        //     if(CourageFactorResponse < 0.1 || CourageFactorResponse > 2.0){
-                        //         Console.Write("Please enter a value between 0.0 and 2.0");
-                        //         Console.ReadLine();
-                        //     }
-                        // } while (CourageFactorResponse >);
-
                         
                         //Compiles the team member propmt responses into an Accomplice object and adds that object as a new list item in the accomplices list
                         accomplices.Add(
